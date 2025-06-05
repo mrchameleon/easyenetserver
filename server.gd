@@ -11,6 +11,7 @@ func _ready():
 	port = config.get_value("app", "port")
 	
 	var peer = ENetMultiplayerPeer.new()
+	peer.set_bind_ip('0.0.0.0')
 	peer.create_server(int(port))
 	print("enet host is running on port: ", port)
 
